@@ -1,0 +1,66 @@
+:root {
+    --card_width: 20%
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 1000px;
+}
+
+hr {
+    color: black;
+    width: 100%;
+    border-width: 2px;
+    border-radius: 25px;
+    border-style: solid;
+}
+
+.card_line {
+    width: 80%;
+}
+
+h1.title {
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(65, 65, 65);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(188, 188, 188);
+    width: 1500px;
+    height: 600px;
+
+}
+
+.section_card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    width: var(--card_width);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+#linear_regression_card {
+    background-color: rgb(223, 91, 91);
+}
+
+#classification_card {
+    background-color: rgb(106, 91, 223);
+}
