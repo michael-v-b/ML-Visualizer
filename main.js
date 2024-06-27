@@ -3,6 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var cards = document.querySelectorAll('.section_card');
 
+    var regression_card = document.getElementById('linear_regression_card');
+
+    var classification_card = document.getElementById('classification_card');
+
+    regression_card.addEventListener('mouseup', function () {
+        window.location = 'regression/regression.html';
+    })
+
+    classification_card.addEventListener('mouseup', function () {
+        window.location = 'classification/classfication.html'
+    })
+
     function darkenColor(color, factor = 0.2) {
 
         //get numbers from regex
@@ -18,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return 'rgb(' + color_arr[0] + ',' + color_arr[1] + ',' + color_arr[2] + ')';
     }
 
-
+    
     cards.forEach(function (card) {
 
         var originalColor = window.getComputedStyle(card).backgroundColor
@@ -35,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('mouseover', mouseOver);
         
         card.addEventListener('mouseleave', mouseLeave);
-
     });
 
 });
