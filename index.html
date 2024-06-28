@@ -4,32 +4,43 @@
     <meta charset = 'UTF-8'>
     <meta name = "viewport" content = 'width-device-width, initial-scale-1.0'>
     <link rel = "stylesheet" href = "styles.css">
-    <script src = 'main.js'></script>
-    <title>ML Visualizer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src = 'js/menuColor.js'></script>
+    <script src  = 'js/main.js'></script>
+    <title>Machine Learning Concepts</title>
 </head>
 <body>
     <div class = "header">
-        <h1 class = "header-text">
+        <div class = 'list_wrapper menu_option'>
+            <i class = 'icon glyphicon glyphicon-list'> </i>
+        </div>
+        <h1 class = "header_text">
             Machine Learning Concepts
             
         </h1>
     </div>
 
-    <video autoplay muted loop id = 'bg-video'>
+    <video autoplay muted loop id = 'bg_video'>
         <source src = 'images/pink-dots.mp4' type = 'video/mp4'>
     </video>
     
-    <div class = 'title-card'>
-        <div class = 'title-card-text-bg'>
-            <h1>Machine Learning Concepts</h1>
+    <div class = 'title_card'>
+        <div id = 'title_card_text_bg'>
+            <h1 id = 'title_card_text'>Machine Learning Concepts</h1>
         </div>
     </div>
 
-    <div class = "card-wrapper">
-        <div class = "section_card" id = "linear_regression_card">
-            <h2>Linear Regression</h2>
-        </div>
 
+    <div class = 'main-section'>
+        <div class = "card_wrapper">
+            <div class = "section_card menu_option" id = "linear_regression_card">
+                <h2>Linear Regression</h2>
+            </div>
+            <div class = "section_card menu_option" id = "classification_card">
+                <h2>Classification</h2>
+            </div>
+
+        </div>
     </div>
 
 </body>

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    var cards = document.querySelectorAll('.section_card');
+    var menu_options = document.querySelectorAll('.menu_option');
+
 
     var regression_card = document.getElementById('linear_regression_card');
 
@@ -15,14 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location = 'classification/classfication.html'
     })
 
-    function darkenColor(color, factor = 0.2) {
+    function changeColor(color, factor = .5) {
 
         //get numbers from regex
         let color_arr = color.match(/\d+/g).map(Number);
 
         //darken by factor
         for (var i = 0; i < color_arr.length; i++){
-            color_arr[i] = Math.floor(color_arr[i] * (1 - factor));
+            if (color_arr[i] < 5) {
+                color_arr[i] += 10;
+            }
+            color_arr[i] = Math.floor(color_arr[i] * (1 + factor));
         }
         
         //color_arr = [r,g,b]
@@ -31,22 +35,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     
-    cards.forEach(function (card) {
 
-        var originalColor = window.getComputedStyle(card).backgroundColor
+
+    var lightened = false;
+
+    menu_options.forEach(function (menu_option) {
+
+        var originalColor = window.getComputedStyle(menu_option).backgroundColor
 
         function mouseOver() {
-            let darkenedColor = darkenColor(window.getComputedStyle(card).backgroundColor,-.1);
-            card.style.backgroundColor = darkenedColor;
+            if (!lightened) {
+                let lightenedColor = changeColor(window.getComputedStyle(menu_option).backgroundColor, 1);
+                menu_option.style.backgroundColor = lightenedColor;
+            }
+            lightened = true;
         }
     
         function mouseLeave() {
-            card.style.backgroundColor = originalColor;
+            menu_option.style.backgroundColor = originalColor;
+            lightened = false;
         }
     
-        card.addEventListener('mouseover', mouseOver);
-        
-        card.addEventListener('mouseleave', mouseLeave);
+        menu_option.addEventListener('mouseover', mouseOver);
+        menu_option.addEventListener('mouseleave', mouseLeave);
     });
 
 });
