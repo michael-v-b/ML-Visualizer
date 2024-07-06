@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#bg_video {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.card_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 97.9vw;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
