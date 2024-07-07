@@ -24,15 +24,16 @@
   width: 100px;
 }
 
-.icon {
+.glyphicon {
   color: rgb(208, 132, 189);
-  font-size: 30px;
+  font-size: 30px !important;
 }
 
 .header_text {
   text-align: center;
   font-family: sans-serif;
   color: rgb(208, 132, 189);
-  font-size: 40px;
+  width: 40%;
+  font-size: 30px;
   text-decoration: underline;
 }

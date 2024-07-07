@@ -7,7 +7,7 @@ interface Props {
 
 function SectionCard({ name, brdColor }: Props) {
   return (
-    <div style={{ borderColor: brdColor }} className="section_card menu_option">
+    <div style={{ borderColor: brdColor }} className="section_card">
       <h2>{name}</h2>
     </div>
   );
