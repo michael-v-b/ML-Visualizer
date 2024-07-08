@@ -1,9 +1,6 @@
 import "./Sidebar.css";
-import {
-  changeBackgroundColor,
-  setBackgroundColor,
-  scaleElement,
-} from "../../utils";
+import UIElement from "../UIElement";
+import { scaleElement } from "../../utils";
 
 function SideBar() {
   const closeBar = () => {
@@ -20,35 +17,44 @@ function SideBar() {
   return (
     <div id="side_bar">
       <div id="text_wrapper">
-        <span id="home">
-          <i className="icon glyphicon glyphicon-home"> </i>
+        <UIElement factor={0.9} id="home">
+          <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
-        </span>
+        </UIElement>
+        <hr />
         <span className="category" id="Regression">
+          <h2 id="category_title">REGRESSION</h2>
           <hr />
-          <h2>REGRESSION</h2>
-          <hr />
-          <span className="chapter">Basics</span>
-          <span className="chapter">Expected Loss</span>
-          <span className="chapter">Gradient Descent</span>
-          <span className="chapter">Bias Variance Tradeoff</span>
-          <span className="chapter">Regularization</span>
+          <UIElement factor={0.9} className="chapter">
+            Expected Loss
+          </UIElement>
+          <UIElement factor={0.9} className="chapter">
+            Gradient Descent
+          </UIElement>
+          <UIElement factor={0.9} className="chapter">
+            Basics
+          </UIElement>
+          <UIElement factor={0.9} className="chapter">
+            Bias Variance Tradeoff
+          </UIElement>
+          <UIElement factor={0.9} className="chapter">
+            Regularization
+          </UIElement>
         </span>
       </div>
-      <div
+      <UIElement
+        factor={0.9}
+        onClick={closeBar}
         onMouseEnter={() => {
-          changeBackgroundColor("close_bar", 0.9);
           scaleElement("close_arrow", 1.2);
         }}
         onMouseLeave={() => {
-          setBackgroundColor("close_bar", closeBarColor);
           scaleElement("close_arrow", 1 / 1.2);
         }}
-        onClick={closeBar}
         id="close_bar"
       >
         <i className="icon glyphicon glyphicon-chevron-left" id="close_arrow" />
-      </div>
+      </UIElement>
     </div>
   );
 }

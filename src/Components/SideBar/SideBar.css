@@ -1,5 +1,16 @@
+:root {
+  --bgColor: rgb(71, 22, 103);
+  --textColor: rgb(208, 132, 189);
+  --closeBorder: rgb(106, 51, 92);
+  --closeBackground: rgb(53, 18, 76);
+}
+
 hr {
-  width: 100%;
+  width: 120%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-width: 2px;
+  border-color: var(--textColor) !important;
 }
 
 #side_bar {
@@ -13,8 +24,8 @@ hr {
   height: 100%;
   width: 0px;
   transition: width 0.3s ease;
-  background-color: rgb(71, 22, 103);
-  color: rgb(208, 132, 189);
+  background-color: var(--bgColor);
+  color: var(--textColor);
   overflow-x: hidden;
 }
 #text_wrapper {
@@ -26,13 +37,15 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 0;
   width: 12%;
   height: 100%;
-  border-color: rgb(106, 51, 92);
+  border-color: var(--closeBorder);
   border-right: 0px;
   border-style: solid;
   border-radius: 15px 0 0 15px;
-  background-color: rgb(53, 18, 76);
+  background-color: var(--closeBackground);
   transition: background-color 0.2s ease;
 }
 #home {
@@ -40,13 +53,22 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  transition: backgroundColor 0.3s ease;
+  width: 100vw;
+  transition: background-color 0.2s ease;
+  background-color: var(--bgColor);
+}
+#category_title {
+  padding-left: 10px;
 }
 .category {
   display: flex;
   flex-direction: column;
+}
+
+.chapter {
+  width: 100%;
   padding-left: 10px;
-  padding-right: 10px;
+  background-color: var(--bgColor);
 }
 
 .glyphicon-home {

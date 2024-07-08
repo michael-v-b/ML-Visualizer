@@ -1,3 +1,7 @@
+#list_icon {
+  transition: transform 0.3s ease;
+}
+
 .header {
   position: fixed;
   display: flex;
@@ -22,6 +26,8 @@
   background-color: rgb(15, 7, 35);
   height: 100%;
   width: 100px;
+  border-color: rgb(150, 80, 133);
+  transition: background-color 0.2s ease;
 }
 
 .glyphicon {

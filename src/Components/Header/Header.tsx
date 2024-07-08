@@ -1,5 +1,7 @@
 import "./Header.css";
-import { changeBackgroundColor, setBackgroundColor } from "../../utils";
+import Button from "react-bootstrap/Button";
+import { scaleElement } from "../../utils";
+import UIElement from "../UIElement";
 
 function Header() {
   const bgColor = "rgb(15, 7, 35)";
@@ -13,17 +15,21 @@ function Header() {
 
   return (
     <div className="header">
-      <div
+      <UIElement
+        factor={1.2}
         className="list_wrapper"
-        onMouseEnter={() => changeBackgroundColor("list_button", 1.2)}
-        onMouseLeave={() => setBackgroundColor("list_button", bgColor)}
         onClick={() => {
           setSideBarWidth(sideBarWidth);
         }}
-        id="list_button"
+        onMouseEnter={() => {
+          scaleElement("list_icon", 1.05);
+        }}
+        onMouseLeave={() => {
+          scaleElement("list_icon", 1 / 1.05);
+        }}
       >
-        <i className="icon glyphicon glyphicon-list" />
-      </div>
+        <i id="list_icon" className="icon glyphicon glyphicon-list" />
+      </UIElement>
       <h1 className="header_text">Machine Learning Concepts</h1>
       <div></div>
     </div>

@@ -11,6 +11,19 @@
   overflow: hidden;
   z-index: -1;
 }
+.main_wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+  color: white;
+  font-size: x-large;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.main_text {
+  padding: 50px 100px 0 100px;
+}
 
 .card_wrapper {
   display: flex;
@@ -19,5 +32,4 @@
   flex-direction: row;
   width: 97.9vw;
   height: 600px;
-  background-color: rgba(0, 0, 0, 0.75);
 }
