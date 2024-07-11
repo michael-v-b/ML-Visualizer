@@ -17,7 +17,16 @@ function SideBar() {
   return (
     <div id="side_bar">
       <div id="text_wrapper">
-        <UIElement factor={0.9} id="home">
+        <UIElement
+          factor={0.9}
+          onMouseEnter={() => {
+            scaleElement("home_icon", 1.05);
+          }}
+          onMouseLeave={() => {
+            scaleElement("home_icon", 1 / 1.05);
+          }}
+          id="home"
+        >
           <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
         </UIElement>
@@ -26,14 +35,15 @@ function SideBar() {
           <h2 id="category_title">REGRESSION</h2>
           <hr />
           <UIElement factor={0.9} className="chapter">
+            Basics
+          </UIElement>
+          <UIElement factor={0.9} className="chapter">
             Expected Loss
           </UIElement>
           <UIElement factor={0.9} className="chapter">
             Gradient Descent
           </UIElement>
-          <UIElement factor={0.9} className="chapter">
-            Basics
-          </UIElement>
+
           <UIElement factor={0.9} className="chapter">
             Bias Variance Tradeoff
           </UIElement>
