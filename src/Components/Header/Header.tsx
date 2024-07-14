@@ -1,7 +1,6 @@
 import "./Header.css";
-import Button from "react-bootstrap/Button";
 import { scaleElement } from "../../utils";
-import UIElement from "../UIElement";
+import Button from "../Button";
 
 function Header() {
   const bgColor = "rgb(15, 7, 35)";
@@ -15,7 +14,7 @@ function Header() {
 
   return (
     <div className="header">
-      <UIElement
+      <Button
         factor={1.2}
         className="list_wrapper"
         onClick={() => {
@@ -29,7 +28,7 @@ function Header() {
         }}
       >
         <i id="list_icon" className="icon glyphicon glyphicon-list" />
-      </UIElement>
+      </Button>
       <h1 className="header_text">Machine Learning Concepts</h1>
       <div></div>
     </div>

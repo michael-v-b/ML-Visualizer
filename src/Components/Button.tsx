@@ -16,7 +16,7 @@ interface UIProps {
   onClick?: MouseEventHandler<HTMLElement>;
 }
 
-const UIElement: React.FC<UIProps> = ({
+const Button: React.FC<UIProps> = ({
   children,
   className,
   onClick,
@@ -63,8 +63,9 @@ const UIElement: React.FC<UIProps> = ({
   const getBGColor = () => {
     if (elementRef.current) {
       return window.getComputedStyle(elementRef.current).backgroundColor;
+    } else {
+      return "no element found";
     }
-    return "no element found";
   };
 
   //use effect so that background is get after div is rendered and reference is mounted
@@ -101,4 +102,4 @@ const UIElement: React.FC<UIProps> = ({
     </div>
   );
 };
-export default UIElement;
+export default Button;

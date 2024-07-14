@@ -1,10 +1,10 @@
 import "./Sidebar.css";
-import UIElement from "../UIElement";
+import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 import { scaleElement } from "../../utils";
 
 function SideBar() {
   const closeBar = () => {
-    console.log("close the side bar");
     const sideBar = document.getElementById("side_bar");
     if (sideBar) {
       sideBar.style.width = "0px";
@@ -14,11 +14,15 @@ function SideBar() {
   };
 
   const closeBarColor = "rgb(53, 18, 76)";
+  const navigate = useNavigate();
   return (
     <div id="side_bar">
       <div id="text_wrapper">
-        <UIElement
+        <Button
           factor={0.9}
+          onClick={() => {
+            navigate("/");
+          }}
           onMouseEnter={() => {
             scaleElement("home_icon", 1.05);
           }}
@@ -29,30 +33,39 @@ function SideBar() {
         >
           <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
-        </UIElement>
+        </Button>
         <hr />
         <span className="category" id="Regression">
-          <h2 id="category_title">REGRESSION</h2>
+          <Button
+            onClick={() => {
+              navigate("/regression");
+            }}
+            factor={0.9}
+            className="chapter"
+            id="category_title"
+          >
+            <h2>REGRESSION</h2>
+          </Button>
           <hr />
-          <UIElement factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter">
             Basics
-          </UIElement>
-          <UIElement factor={0.9} className="chapter">
+          </Button>
+          <Button factor={0.9} className="chapter">
             Expected Loss
-          </UIElement>
-          <UIElement factor={0.9} className="chapter">
+          </Button>
+          <Button factor={0.9} className="chapter">
             Gradient Descent
-          </UIElement>
+          </Button>
 
-          <UIElement factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter">
             Bias Variance Tradeoff
-          </UIElement>
-          <UIElement factor={0.9} className="chapter">
+          </Button>
+          <Button factor={0.9} className="chapter">
             Regularization
-          </UIElement>
+          </Button>
         </span>
       </div>
-      <UIElement
+      <Button
         factor={0.9}
         onClick={closeBar}
         onMouseEnter={() => {
@@ -64,7 +77,7 @@ function SideBar() {
         id="close_bar"
       >
         <i className="icon glyphicon glyphicon-chevron-left" id="close_arrow" />
-      </UIElement>
+      </Button>
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500vh;
+}
+.image {
+  background-color: blue;
+  width: 100%;
+  height: 100vh;
+}
+.main_wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  width: 100%;
+  height: 400vh;
+}
+.anim_wrapper {
+  right: 0;
+  background-color: green;
+  height: 400vh;
+  width: 67%;
+}
+.text_wrapper {
+  left: 0;
+  background-color: pink;
+  width: 33%;
+  height: 400vh;
+}
