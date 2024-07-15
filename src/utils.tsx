@@ -7,9 +7,6 @@ export const scaleElement = (elementId: string, factor: number) => {
   }
 };
 
-export const getBGColor = (elementRef: HTMLElement) => {
-  if (elementRef.current) {
-    return window.getComputedStyle(elementRef.current).backgroundColor;
-  }
-  return "no element found";
+export const scrollToElement = () => {
+  window.scrollTo();
 };

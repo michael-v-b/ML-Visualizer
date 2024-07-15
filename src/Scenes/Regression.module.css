@@ -12,15 +12,35 @@
 .main_wrapper {
   display: flex;
   flex-direction: row;
-  background-color: red;
   width: 100%;
   height: 400vh;
 }
 .anim_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   right: 0;
   background-color: green;
   height: 400vh;
   width: 67%;
+}
+.section {
+  width: 50%;
+  height: 100vh;
+  z-index: 1;
+}
+#section_1 {
+  background-color: brown;
+}
+#section_2 {
+  background-color: blueviolet;
+}
+#section_3 {
+  background-color: aqua;
+}
+#section_4 {
+  background-color: chocolate;
 }
 .text_wrapper {
   left: 0;
