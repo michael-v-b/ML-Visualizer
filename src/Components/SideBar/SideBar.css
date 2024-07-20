@@ -1,8 +1,10 @@
 :root {
-  --side-bg-color: rgb(71, 22, 103);
-  --side-text-color: rgb(208, 132, 189);
-  --side-close-border: rgb(106, 51, 92);
-  --side-close-background: rgb(53, 18, 76);
+  --side-bg-color: black;
+  --side-text-color: white;
+  --side-border-color: white;
+  --side-close-background: rgb(48, 48, 48);
+  --side-border-size: (10px);
+  --side-regression-bg-color: rgb(216, 94, 94);
 }
 
 hr {
@@ -10,7 +12,7 @@ hr {
   margin-top: 0px;
   margin-bottom: 10px;
   border-width: 2px;
-  border-color: var(--side-text-color) !important;
+  border-color: var(--side-text-color);
 }
 
 #side_bar {
@@ -41,10 +43,9 @@ hr {
   right: 0;
   width: 12%;
   height: 100%;
-  border-color: var(--side-close-border);
-  border-right: 0px;
+  border-color: var(--side-border-color);
   border-style: solid;
-  border-radius: 15px 0 0 15px;
+  border-radius: var(--side-border-size) 0 0 var(--side-border-size);
   background-color: var(--side-close-background);
   transition: background-color 0.2s ease;
 }
@@ -57,18 +58,25 @@ hr {
   transition: background-color 0.2s ease;
   background-color: var(--side-bg-color);
 }
-#category_title {
+.category_title {
   padding-left: 10px;
+  background-color: var(--side-bg-color);
+  border-color: var(--side-border-color);
+  border-width: 2px;
+  border-style: solid;
 }
 .category {
   display: flex;
   flex-direction: column;
 }
+.regression_section {
+  background-color: var(--side-regression-bg-color);
+}
 
 .chapter {
   width: 100%;
   padding-left: 10px;
-  background-color: var(--side-bg-color);
+  color: black;
 }
 
 .glyphicon-home {

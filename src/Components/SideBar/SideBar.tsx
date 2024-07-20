@@ -34,34 +34,43 @@ function SideBar() {
           <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
         </Button>
-        <hr />
+
         <span className="category" id="Regression">
           <Button
             onClick={() => {
               navigate("/regression");
             }}
             factor={0.9}
-            className="chapter"
-            id="category_title"
+            className="category_title"
           >
             <h2>REGRESSION</h2>
           </Button>
-          <hr />
-          <Button factor={0.9} className="chapter">
+
+          <Button factor={0.9} className="chapter regression_section">
             Basics
           </Button>
-          <Button factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter regression_section">
             Expected Loss
           </Button>
-          <Button factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter regression_section">
             Gradient Descent
           </Button>
 
-          <Button factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter regression_section">
             Bias Variance Tradeoff
           </Button>
-          <Button factor={0.9} className="chapter">
+          <Button factor={0.9} className="chapter regression_section">
             Regularization
+          </Button>
+        </span>
+        <span className="Deep Learning">
+          <Button
+            factor={0.9}
+            onClick={() => {
+              navigate("/NN");
+            }}
+          >
+            <h2>DEEP LEARNING</h2>
           </Button>
         </span>
       </div>
