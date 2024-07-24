@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
+import { motion, MotionValue, ResolvedValues } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
 interface DotProps {
   bgColor?: string;
+  onUpdatePosition: (position: { x: number; y: number }) => void;
 }
 
 const headerHeight = 60;
@@ -14,37 +15,53 @@ function getRandomY() {
 function getRandomX() {
   return Math.random() * window.innerWidth;
 }
+function getRandomWall() {
+  const wallNum = Math.random();
+  if (wallNum < 0.25) {
+    return "top";
+  } else if (wallNum < 0.5) {
+    return "right";
+  } else if (wallNum < 0.75) {
+    return "bottom";
+  } else {
+    return "left";
+  }
+}
 
-const Dot: React.FC<DotProps> = ({ bgColor = "white" }) => {
+const Dot: React.FC<DotProps> = ({ bgColor = "white", onUpdatePosition }) => {
   const [direction, setDirection] = useState({
     YStart: null as number | null,
     YEnd: null as number | null,
     XStart: null as number | null,
     XEnd: null as number | null,
-    isHorizontal: Math.random() > 0.5 ? true : false,
+    wall: null as string | null,
     key: 0,
   });
 
+  const minSpeed = 8;
+  const maxSpeed = 5;
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
   const resetDirection = () => {
-    let isHorizontal = Math.random() > 0.5 ? true : false;
-    let isRight = Math.random() > 0.5 ? true : false;
-    let tempYStart = getRandomY();
+    let newWall = getRandomWall();
+    while (direction.wall == newWall) {
+      newWall = getRandomWall();
+    }
+
+    let tempYStart = direction.YEnd ?? getRandomY();
+    let tempXStart = direction.XEnd ?? getRandomX();
+
     let tempYEnd = getRandomY();
-    let tempXStart = getRandomX();
     let tempXEnd = getRandomX();
 
-    if (isHorizontal && isRight) {
-      tempXStart = -50;
-      tempXEnd = window.innerWidth;
-    } else if (isHorizontal && !isRight) {
-      tempXStart = window.innerWidth + 50;
-      tempXEnd = 0;
-    } else if (!isHorizontal && isRight) {
-      tempYStart = -50;
-      tempYEnd = window.innerHeight;
-    } else {
-      tempYStart = window.innerHeight + 50;
+    if (newWall == "top") {
       tempYEnd = 0;
+    } else if (newWall == "right") {
+      tempXEnd = window.innerWidth;
+    } else if (newWall == "left") {
+      tempXEnd = 0;
+    } else if ((newWall = "bottom")) {
+      tempYEnd = window.innerHeight;
     }
 
     setDirection((prevDirection) => ({
@@ -55,41 +72,54 @@ const Dot: React.FC<DotProps> = ({ bgColor = "white" }) => {
       XEnd: tempXEnd,
       isHorizontal: Math.random() > 0.5 ? true : false,
       key: prevDirection.key + 1,
+      wall: newWall,
     }));
   };
+
   function handleAnimationComplete() {
     resetDirection();
   }
+
+  const handleUpdate = (latest: ResolvedValues) => {
+    let newPos = {
+      x: latest.cx as number,
+      y: latest.cy as number,
+    };
+    setPosition(newPos);
+    onUpdatePosition(newPos);
+  };
 
   useEffect(() => {
     resetDirection();
   }, []);
 
   return (
-    <motion.div
-      key={direction.key}
-      style={{
-        borderColor: bgColor,
-        borderRadius: "100%",
-        borderWidth: "3px",
-        borderStyle: "solid",
-        width: "10px",
-        height: "10px",
-        position: "absolute",
-        top: 0,
-      }}
-      initial={{
-        y: direction.YStart != null ? direction.YStart : headerHeight,
-        x: direction.XStart != null ? direction.XStart : 0,
-      }}
-      animate={{
-        x: direction.XEnd != null ? direction.XEnd : 0,
-        y: direction.YEnd != null ? direction.YEnd : headerHeight,
-      }}
-      transition={{ delay: Math.random() * 5, duration: 5, ease: "linear" }}
-      onAnimationComplete={handleAnimationComplete}
-      className="dot"
-    ></motion.div>
+    <>
+      <svg
+        width="100vw"
+        height="100vh"
+        style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}
+      >
+        <motion.circle
+          key={direction.key}
+          fill={bgColor}
+          cx={direction.XStart ?? 0}
+          cy={direction.YStart ?? headerHeight}
+          r="7"
+          animate={{
+            cx: direction.XEnd ?? 0,
+            cy: direction.YEnd ?? headerHeight,
+          }}
+          transition={{
+            duration: Math.random() * (maxSpeed - minSpeed) + minSpeed,
+            ease: "linear",
+          }}
+          onUpdate={handleUpdate}
+          onAnimationComplete={handleAnimationComplete}
+          className="dot"
+        ></motion.circle>
+      </svg>
+    </>
   );
 };
 export default Dot;

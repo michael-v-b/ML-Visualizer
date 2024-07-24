@@ -3,7 +3,7 @@ import Header from "../Components/Header/Header";
 import SideBar from "../Components/SideBar/SideBar";
 import TitleCard from "../Components/TitleCard/TitleCard";
 import SectionCard from "../Components/SectionCard/SectionCard";
-import BG from "../Components/BGAnimation/BgAnimation";
+import BG from "../Components/BGAnimation/BGAnimation";
 import "./Home.css";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
   return (
     <div className="main">
       <Header />
-      <BG />
+      <BG numDots={9} color="#AAAAAA" />
       <SideBar />
       <TitleCard />
 

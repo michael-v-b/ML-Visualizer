@@ -1,4 +1,4 @@
-import BgAnimation from "../Components/BgAnimation/BgAnimation";
+import BG from "../Components/BGAnimation/BGAnimation";
 import Header from "../Components/Header/Header";
 import SideBar from "../Components/SideBar/SideBar";
 import style from "./NN.module.css";
@@ -7,9 +7,7 @@ const NN = () => {
     <>
       <Header />
       <SideBar />
-      <div className={style.main}>
-        <BgAnimation />
-      </div>
+      <div className={style.main}></div>
     </>
   );
 };
