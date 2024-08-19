@@ -83,6 +83,7 @@ hr {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 25px !important;
+  transition: transform 0.2s ease;
 }
 
 #close_arrow {

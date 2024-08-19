@@ -86,8 +86,6 @@ const Button: React.FC<UIProps> = ({
       onMouseEnter={(e) => {
         if (onMouseEnter) {
           onMouseEnter(e);
-        } else {
-          console.log("this doesn't work?");
         }
         changeBGColor(factor);
       }}

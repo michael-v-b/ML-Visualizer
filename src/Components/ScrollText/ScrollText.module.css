@@ -1,0 +1,14 @@
+:root {
+  --border-width: 5px;
+}
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  flex-direction: column;
+  width: 40vw;
+  height: 100vw;
+  border-width: var(--border-width);
+  border-left: 0px;
+  border-style: solid;
+}

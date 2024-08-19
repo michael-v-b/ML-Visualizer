@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+  background-color: blue;
+}
