@@ -29,10 +29,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--header-bg-color);
   height: 100%;
   width: 100px;
-  border-color: var(--header-text-color);
   transition: background-color 0.2s ease;
 }
 

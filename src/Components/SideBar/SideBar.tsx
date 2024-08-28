@@ -38,7 +38,7 @@ function SideBar() {
         <span className="category" id="Regression">
           <Button
             onClick={() => {
-              navigate("/regression");
+              navigate("/regression/basics");
             }}
             factor={0.9}
             className="category_title"
@@ -46,10 +46,22 @@ function SideBar() {
             <h2>REGRESSION</h2>
           </Button>
 
-          <Button factor={0.9} className="chapter regression_section">
+          <Button
+            onClick={() => {
+              navigate("/regression/basics");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
             Basics
           </Button>
-          <Button factor={0.9} className="chapter regression_section">
+          <Button
+            onClick={() => {
+              navigate("/regression/expected-loss");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
             Expected Loss
           </Button>
           <Button factor={0.9} className="chapter regression_section">

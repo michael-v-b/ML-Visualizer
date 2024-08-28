@@ -1,8 +1,13 @@
 import "./Header.css";
 import { scaleElement } from "../../utils";
+import { motion } from "framer-motion";
 import Button from "../Button";
 
-function Header() {
+interface HeaderProps {
+  title?: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ title }) => {
   const bgColor = "rgb(15, 7, 35)";
   const sideBarWidth = 300;
   const setSideBarWidth = (width: number) => {
@@ -29,9 +34,11 @@ function Header() {
       >
         <i id="list_icon" className="icon glyphicon glyphicon-list" />
       </Button>
-      <h1 className="header_text">Machine Learning Concepts</h1>
+      <h1 className="header_text">
+        {title ? title : "Machine Learning Concepts"}
+      </h1>
       <div></div>
     </div>
   );
-}
+};
 export default Header;

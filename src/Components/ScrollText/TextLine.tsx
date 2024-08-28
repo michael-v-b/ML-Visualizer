@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 import style from "./TextLine.module.css";
 
@@ -9,20 +9,56 @@ interface TextLineProps {
 }
 
 const TextLine: React.FC<TextLineProps> = ({ content }) => {
-  const contentRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const divRef = useRef<HTMLDivElement>(null);
+  const [isCentered, setIsCentered] = useState(false);
+  const leeway = 100;
 
-  const { scrollYProgress } = useScroll({
-    target: contentRef,
-    offset: ["start start", "end end"],
-  });
+  //handleScroll detects if div is in the center
+  const handleScroll = useCallback(() => {
+    if (divRef.current) {
+      const windowCenterY = (2 * window.innerHeight) / 3;
+      const rect = divRef.current.getBoundingClientRect();
+      const rectCenterY = rect.top + rect.height;
+      setIsCentered(Math.abs(windowCenterY - rectCenterY) < leeway);
+    }
+  }, []);
 
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 2, 1]);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    handleScroll();
+    // Animation if it's centered
+
+    //removed for memory leakage
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    if (isCentered) {
+      controls.start({
+        scale: 1.1,
+        color: "#FFFFFF",
+        transition: { duration: 0.25 },
+      });
+    } else {
+      //return it normal if not
+      controls.start({
+        scale: 1,
+        color: "#9A9A9A",
+        transition: { duration: 0.25 },
+      });
+    }
+  }, [isCentered, controls]);
 
   return (
-    <motion.div className={style.main} style={{ scale }}>
+    <motion.div ref={divRef} animate={controls} className={style.main}>
       {content}
     </motion.div>
   );
 };
-
 export default TextLine;

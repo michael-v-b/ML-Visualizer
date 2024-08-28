@@ -1,6 +1,12 @@
+:root {
+  --regression-cite-size: 380vh;
+}
+
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 .image {
@@ -11,6 +17,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: var(--regression-cite-size);
 }
 .anim_wrapper {
   display: flex;
@@ -20,6 +27,7 @@
   right: 0;
   background-color: black;
   width: 67%;
+  height: var(--regression-cite-size);
 }
 .section {
   width: 50%;
@@ -30,4 +38,9 @@
   left: 0;
   background-color: pink;
   width: 33%;
+  height: var(--regression-cite-size);
+}
+.footer {
+  width: 90vw;
+  height: 33vh;
 }

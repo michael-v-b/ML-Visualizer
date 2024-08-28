@@ -7,8 +7,12 @@
   align-items: space-evenly;
   flex-direction: column;
   width: 40vw;
-  height: 100vw;
+  height: 100vh;
   border-width: var(--border-width);
   border-left: 0px;
   border-style: solid;
+}
+.padding {
+  display: flex;
+  height: 50vh;
 }

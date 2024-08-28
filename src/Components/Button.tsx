@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 interface UIProps {
-  children: ReactNode;
+  children?: ReactNode;
   id?: string;
   className?: string;
   onMouseEnter?: MouseEventHandler<HTMLElement>;
