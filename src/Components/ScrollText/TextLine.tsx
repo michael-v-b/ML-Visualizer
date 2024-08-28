@@ -6,9 +6,11 @@ import style from "./TextLine.module.css";
 
 interface TextLineProps {
   content: string;
+  index: number;
+  getIndex: Function;
 }
 
-const TextLine: React.FC<TextLineProps> = ({ content }) => {
+const TextLine: React.FC<TextLineProps> = ({ content, index, getIndex }) => {
   const controls = useAnimation();
   const divRef = useRef<HTMLDivElement>(null);
   const [isCentered, setIsCentered] = useState(false);
@@ -45,6 +47,7 @@ const TextLine: React.FC<TextLineProps> = ({ content }) => {
         color: "#FFFFFF",
         transition: { duration: 0.25 },
       });
+      getIndex(index);
     } else {
       //return it normal if not
       controls.start({

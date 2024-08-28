@@ -33,7 +33,11 @@ const RegExLoss = () => {
 
         <div className={style.anim_wrapper}></div>
       </div>
-      <Footer content={"Gradient Descent:"} />
+      <Footer
+        prevText={"Basics: "}
+        nextText={"Gradient Descent:"}
+        prevPage={"/regression/basics"}
+      />
     </div>
   );
 };

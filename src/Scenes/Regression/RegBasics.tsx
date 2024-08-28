@@ -34,7 +34,7 @@ const RegBasics = () => {
         <div className={style.anim_wrapper}></div>
       </div>
       <Footer
-        content={"Expected Loss:"}
+        nextText={"Expected Loss:"}
         nextPage={"/regression/expected-loss"}
       />
     </div>

@@ -3,15 +3,13 @@ import Home from "./Scenes/Home";
 import RegBasics from "./Scenes/Regression/RegBasics";
 import RegExLoss from "./Scenes/Regression/RegExLoss";
 import NN from "./Scenes/NN";
+import ScrollToTop from "./ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/regression">Regression</Link>
-      </nav>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/regression/basics" element={<RegBasics />} />

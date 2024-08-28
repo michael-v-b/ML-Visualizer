@@ -24,6 +24,10 @@ const ScrollText: React.FC<ScrollTextProps> = ({
   borderColor,
   height,
 }) => {
+  const getIndex = (idx: number) => {
+    console.log("string " + idx + " is centered.");
+  };
+
   return (
     <div
       className={style.main}
@@ -35,7 +39,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({
     >
       <div className={style.padding}></div>
       {text.map((item, key) => (
-        <TextLine key={key} content={item} />
+        <TextLine key={key} index={key} content={item} getIndex={getIndex} />
       ))}
       <div className={style.padding}></div>
     </div>
