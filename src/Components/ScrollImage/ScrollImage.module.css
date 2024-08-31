@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  height: 500px;
+  width: 500px;
+  top: 30%;
+}
+.image {
+  height: 500px;
+  width: 200px;
+}

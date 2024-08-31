@@ -16,6 +16,7 @@ interface ScrollTextProps {
   backgroundColor?: string;
   borderColor?: string;
   height?: string;
+  getIndex: Function;
 }
 
 const ScrollText: React.FC<ScrollTextProps> = ({
@@ -23,11 +24,8 @@ const ScrollText: React.FC<ScrollTextProps> = ({
   backgroundColor,
   borderColor,
   height,
+  getIndex,
 }) => {
-  const getIndex = (idx: number) => {
-    console.log("string " + idx + " is centered.");
-  };
-
   return (
     <div
       className={style.main}
