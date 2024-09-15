@@ -1,8 +1,9 @@
 .main {
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200vh;
+  height: 150vh;
   width: 98vw;
 }

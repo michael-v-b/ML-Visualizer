@@ -3,13 +3,15 @@ import { scaleElement } from "../../utils";
 import { motion } from "framer-motion";
 import Button from "../Button";
 
+//sets title of header
 interface HeaderProps {
   title?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
-  const bgColor = "rgb(15, 7, 35)";
-  const sideBarWidth = 300;
+  const bgColor = "rgb(15, 7, 35)"; //background color
+  const sideBarWidth = 300; //width of side bar
+  //method that sets sidebar to specific width
   const setSideBarWidth = (width: number) => {
     const side_bar = document.getElementById("side_bar");
     if (side_bar) {
@@ -19,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
   return (
     <div className="header">
+      //button for the side bar
       <Button
         factor={1.2}
         className="list_wrapper"
@@ -35,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <i id="list_icon" className="icon glyphicon glyphicon-list" />
       </Button>
       <h1 className="header_text">
+        //actual title, if null title is "Machine Learning Concepts"
         {title ? title : "Machine Learning Concepts"}
       </h1>
       <div></div>

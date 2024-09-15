@@ -65,9 +65,6 @@ function Home() {
             much of our life.
           </p>
         </div>
-        <div className="card_wrapper">
-          <SectionCard name="Regression" brdColor="#F305D3" />
-        </div>
       </div>
     </div>
   );

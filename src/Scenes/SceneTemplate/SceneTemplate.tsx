@@ -4,12 +4,12 @@ import ScrollText from "../../Components/ScrollText/ScrollText";
 import ScrollImage from "../../Components/ScrollImage/ScrollImage";
 import Footer from "../../Components/Footer/Footer";
 import React, { useEffect, useState, useRef, ReactNode } from "react";
-import * as images from "../../Assets";
 import style from "./SceneTemplate.module.css";
 
 interface SceneTemplateProps {
   height?: string;
   title?: string;
+  mainImage?: ReactNode;
   text: string[];
   borderColor?: string;
   images: ReactNode[];
@@ -22,6 +22,7 @@ interface SceneTemplateProps {
 const SceneTemplate: React.FC<SceneTemplateProps> = ({
   height,
   title,
+  mainImage,
   text,
   borderColor,
   images,
@@ -30,6 +31,7 @@ const SceneTemplate: React.FC<SceneTemplateProps> = ({
   nextPage,
   prevPage,
 }) => {
+  //get index of text to set index of image
   const [index, setIndex] = useState(0);
   const getIndex = (idx: number) => {
     setIndex(idx);
@@ -40,7 +42,9 @@ const SceneTemplate: React.FC<SceneTemplateProps> = ({
       <Header title={title} />
       <SideBar />
 
-      <div className={style.image}></div>
+      <div className={style.image_wrapper}>
+        <div className={style.image}>{mainImage}</div>
+      </div>
       <div className={style.main_wrapper} style={{ height: height }}>
         <ScrollText
           getIndex={getIndex}
@@ -49,7 +53,6 @@ const SceneTemplate: React.FC<SceneTemplateProps> = ({
           height={height}
           text={text}
         />
-
         <div className={style.anim_wrapper} style={{ height: height }}>
           <ScrollImage images={images} index={index}></ScrollImage>
         </div>
@@ -63,4 +66,5 @@ const SceneTemplate: React.FC<SceneTemplateProps> = ({
     </div>
   );
 };
+
 export default SceneTemplate;

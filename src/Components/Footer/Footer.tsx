@@ -4,11 +4,12 @@ import Button from "../Button";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
+//sets values for the footer's buttons
 interface FooterProp {
-  nextText?: string;
-  prevText?: string;
-  nextPage?: string;
-  prevPage?: string;
+  nextText?: string; //text for next button
+  prevText?: string; //text for prev button
+  nextPage?: string; //link for next page button
+  prevPage?: string; //link for prev page button
 }
 const Footer: React.FC<FooterProp> = ({
   nextText,
@@ -16,7 +17,11 @@ const Footer: React.FC<FooterProp> = ({
   nextPage,
   prevPage,
 }) => {
+  //navigate object for the buttons
   const navigate = useNavigate();
+
+  //sets a next button to the right if the next text isn't null
+  //sets a prev button to the left if the prev text isn't null
   return (
     <div className={style.main}>
       {/* previous button*/}
