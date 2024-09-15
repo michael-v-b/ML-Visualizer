@@ -20,9 +20,7 @@ function SideBar() {
   return (
     //full sidebar
     <div id="side_bar">
-      //text wrapper
       <div id="text_wrapper">
-        //Button for Home Screen
         <Button
           factor={0.9}
           onClick={() => {
@@ -39,7 +37,6 @@ function SideBar() {
           <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
         </Button>
-        //REGRESSION SECTION------------------------------------------------
         <span className="category" id="Regression">
           <Button
             onClick={() => {
@@ -50,7 +47,6 @@ function SideBar() {
           >
             <h2>REGRESSION</h2>
           </Button>
-          //BASICS----------------------------------------------------------
           <Button
             onClick={() => {
               navigate("/regression/basics");
@@ -60,7 +56,6 @@ function SideBar() {
           >
             Basics
           </Button>
-          //VECTORS AND THE REGRESSION LINE---------------------------------
           <Button
             onClick={() => {
               navigate("/regression/vector");
@@ -70,7 +65,6 @@ function SideBar() {
           >
             Vectors and the Regression Line
           </Button>
-          //EXPECTED LOSS-------------------------------------------------
           <Button
             onClick={() => {
               navigate("/regression/expected-loss");
@@ -80,7 +74,6 @@ function SideBar() {
           >
             Expected Loss
           </Button>
-          //GRADIENT DESCENT----------------------------------------------
           <Button
             onClick={() => {
               navigate("/regression/gradient-descent");
@@ -91,7 +84,6 @@ function SideBar() {
             Gradient Descent
           </Button>
         </span>
-        //DEEP LEARNING--------------------------------------
         <span className="Deep Learning">
           <Button
             factor={0.9}

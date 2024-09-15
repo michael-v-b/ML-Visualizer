@@ -6,7 +6,6 @@ export default defineConfig({
     react(),
     // Add other plugins here if needed
   ],
-  base: "/ML-Visualizer/",
 
   assetsInclude: ["**/*.riv"],
 });

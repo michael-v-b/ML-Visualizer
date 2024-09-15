@@ -21,7 +21,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
   return (
     <div className="header">
-      //button for the side bar
       <Button
         factor={1.2}
         className="list_wrapper"
@@ -38,7 +37,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <i id="list_icon" className="icon glyphicon glyphicon-list" />
       </Button>
       <h1 className="header_text">
-        //actual title, if null title is "Machine Learning Concepts"
         {title ? title : "Machine Learning Concepts"}
       </h1>
       <div></div>
