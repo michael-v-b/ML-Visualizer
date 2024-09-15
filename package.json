@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rive-app/react-canvas": "^4.13.8",
     "bootstrap": "^5.3.3",
+    "framer": "^2.4.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",

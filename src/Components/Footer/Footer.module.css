@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 98vw;
+  height: 20vh;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: white;
+  font-size: 30px;
+}
+
+.prev_text {
+  padding-right: 10px;
+}
+.next_text {
+  padding-right: 10px;
+}
+
+.nav_button_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav_button {
+  height: 60px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #141414;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 25px;
+  padding: 7%;
+
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#nav_icon {
+  transition: transform 0.3s ease;
+}

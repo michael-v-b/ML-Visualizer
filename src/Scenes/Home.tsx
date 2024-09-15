@@ -3,6 +3,7 @@ import Header from "../Components/Header/Header";
 import SideBar from "../Components/SideBar/SideBar";
 import TitleCard from "../Components/TitleCard/TitleCard";
 import SectionCard from "../Components/SectionCard/SectionCard";
+import BG from "../Components/BGAnimation/BGAnimation";
 import "./Home.css";
 
 function Home() {
@@ -11,11 +12,10 @@ function Home() {
   return (
     <div className="main">
       <Header />
-      <video autoPlay muted loop id="bg_video">
-        <source src="public/pink-dots.mp4" type="video/mp4" />
-      </video>
+      <BG numDots={9} color="#AAAAAA" />
       <SideBar />
       <TitleCard />
+
       <div className="main_wrapper">
         <div className="main_text">
           <h2>What is Machine Learning?</h2>
@@ -64,9 +64,6 @@ function Home() {
             will have a deeper understanding of these algorithms which affect so
             much of our life.
           </p>
-        </div>
-        <div className="card_wrapper">
-          <SectionCard name="Regression" brdColor="#F305D3" />
         </div>
       </div>
     </div>

@@ -2,8 +2,10 @@ import "./Sidebar.css";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { scaleElement } from "../../utils";
+//A side navigational bar that shows a list of all sections
 
 function SideBar() {
+  //method that sets side bar width to 0 when closed
   const closeBar = () => {
     const sideBar = document.getElementById("side_bar");
     if (sideBar) {
@@ -13,11 +15,14 @@ function SideBar() {
     }
   };
 
-  const closeBarColor = "rgb(53, 18, 76)";
-  const navigate = useNavigate();
+  const closeBarColor = "rgb(53, 18, 76)"; //color of close sidebar button
+  const navigate = useNavigate(); //navigate object for links
   return (
+    //full sidebar
     <div id="side_bar">
+      //text wrapper
       <div id="text_wrapper">
+        //Button for Home Screen
         <Button
           factor={0.9}
           onClick={() => {
@@ -34,34 +39,67 @@ function SideBar() {
           <i id="home_icon" className="icon glyphicon glyphicon-home"></i>
           <h2>Home</h2>
         </Button>
-        <hr />
+        //REGRESSION SECTION------------------------------------------------
         <span className="category" id="Regression">
           <Button
             onClick={() => {
-              navigate("/regression");
+              navigate("/regression/basics");
             }}
             factor={0.9}
-            className="chapter"
-            id="category_title"
+            className="category_title"
           >
             <h2>REGRESSION</h2>
           </Button>
-          <hr />
-          <Button factor={0.9} className="chapter">
+          //BASICS----------------------------------------------------------
+          <Button
+            onClick={() => {
+              navigate("/regression/basics");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
             Basics
           </Button>
-          <Button factor={0.9} className="chapter">
+          //VECTORS AND THE REGRESSION LINE---------------------------------
+          <Button
+            onClick={() => {
+              navigate("/regression/vector");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
+            Vectors and the Regression Line
+          </Button>
+          //EXPECTED LOSS-------------------------------------------------
+          <Button
+            onClick={() => {
+              navigate("/regression/expected-loss");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
             Expected Loss
           </Button>
-          <Button factor={0.9} className="chapter">
+          //GRADIENT DESCENT----------------------------------------------
+          <Button
+            onClick={() => {
+              navigate("/regression/gradient-descent");
+            }}
+            factor={0.9}
+            className="chapter regression_section"
+          >
             Gradient Descent
           </Button>
-
-          <Button factor={0.9} className="chapter">
-            Bias Variance Tradeoff
-          </Button>
-          <Button factor={0.9} className="chapter">
-            Regularization
+        </span>
+        //DEEP LEARNING--------------------------------------
+        <span className="Deep Learning">
+          <Button
+            factor={0.9}
+            onClick={() => {
+              navigate("/NN");
+            }}
+          >
+            <h2>DEEP LEARNING</h2>
           </Button>
         </span>
       </div>

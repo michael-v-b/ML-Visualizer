@@ -1,0 +1,9 @@
+export { default as TitleCard } from "./scatterplot.riv";
+export { default as ThumbsUp } from "./thumb_up.riv";
+export { default as RotatePlot } from "./rotate_plot.riv";
+export { default as IceCream } from "./ice_cream.riv";
+export { default as IceCreamQuestion } from "./ice_cream_question.riv";
+export { default as IceCreamGraph } from "./ice_cream_graph.riv";
+export { default as IceCreamPointer } from "./ice_cream_pointer.riv";
+export { default as IceCreamDrawLine } from "./ice_cream_draw_line.riv";
+export { default as IceCreamStay } from "./ice_cream_stay.riv";

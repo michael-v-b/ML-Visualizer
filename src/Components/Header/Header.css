@@ -1,6 +1,7 @@
 :root {
-  --bg-color: rgb(15, 7, 35);
-  --border-color: rgb(208, 132, 189);
+  --header-bg-color: black;
+  --header-border-color: white;
+  --header-text-color: black;
 }
 
 #list_icon {
@@ -17,10 +18,10 @@
   top: 0;
   height: 10%;
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--header-bg-color);
   border-width: 1%;
   border-style: solid;
-  border-color: var(--border-color);
+  border-color: var(--header-border-color);
   z-index: 99;
 }
 
@@ -28,22 +29,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
   height: 100%;
   width: 100px;
-  border-color: rgb(150, 80, 133);
   transition: background-color 0.2s ease;
 }
 
 .glyphicon {
-  color: var(--border-color);
+  color: var(--header-border-color);
   font-size: 30px !important;
 }
 
 .header_text {
   text-align: center;
   font-family: sans-serif;
-  color: var(--border-color);
+  color: var(--header-border-color);
   width: 40%;
   font-size: 30px;
   text-decoration: underline;

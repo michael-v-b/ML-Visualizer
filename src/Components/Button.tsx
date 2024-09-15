@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 interface UIProps {
-  children: ReactNode;
+  children?: ReactNode;
   id?: string;
   className?: string;
   onMouseEnter?: MouseEventHandler<HTMLElement>;
@@ -86,8 +86,6 @@ const Button: React.FC<UIProps> = ({
       onMouseEnter={(e) => {
         if (onMouseEnter) {
           onMouseEnter(e);
-        } else {
-          console.log("this doesn't work?");
         }
         changeBGColor(factor);
       }}
