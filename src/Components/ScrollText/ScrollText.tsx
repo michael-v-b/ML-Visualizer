@@ -37,7 +37,6 @@ const ScrollText: React.FC<ScrollTextProps> = ({
       }}
     >
       <div className={style.padding}></div>
-      //make a textline for each value in the text array
       {text.map((item, key) => (
         <TextLine key={key} index={key} content={item} getIndex={getIndex} />
       ))}

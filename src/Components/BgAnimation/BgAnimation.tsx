@@ -38,7 +38,6 @@ const BG: React.FC<BGProps> = ({ numDots = 12, color = "#FFFFFF" }) => {
   return (
     <>
       <div className={style.main}>
-        //initialize each line associated with dots
         {dotPositions.map((_, index) =>
           dotPositions.map((_, index2) => (
             <Line
@@ -50,7 +49,7 @@ const BG: React.FC<BGProps> = ({ numDots = 12, color = "#FFFFFF" }) => {
             />
           ))
         )}
-        ; //initialize dot array
+        ;
         {elementsArray.map((_, index) => (
           <Dot
             key={index}
