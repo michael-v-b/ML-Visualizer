@@ -11,7 +11,7 @@ interface Position {
 
 //tells number of dots and color
 interface BGProps {
-  numDots?: number; //sets number of dots
+  numDots?: number; //sets number of dotss
   color?: string; //sets color of dot
 }
 
